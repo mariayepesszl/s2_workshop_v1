@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd should-i-deploy
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: should-i-deploy/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - should-i-deploy/node_modules/**/*
